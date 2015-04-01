@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>protocol</key> 
+	<string>http</string>
+	<key>host</key>
+	<string>27.57.173.56</string>
+	<key>port</key>
+	<string>10080</string>
+	<key>wlServerContext</key>
+	<string>/MobileCRM/</string>
+	<key>application id</key>
+	<string>iOSMobileCRM</string>
+	<key>application version</key>
+	<string>1.0</string>
+	<key>environment</key>
+	<string>iOSnative</string>
+	<key>wlUid</key>
+	<string>wY/mbnwKTDDYQUvuQCdSgg==</string>
+	<key>platformVersion</key>
+	<string>6.2.0.00.20140825-1637</string>
+</dict>
+</plist>

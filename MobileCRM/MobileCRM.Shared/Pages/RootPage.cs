@@ -5,6 +5,8 @@ using Xamarin.Forms;
 using MobileCRM.Shared.Pages;
 using MobileCRM.Models;
 using MobileCRM.Services;
+using System.Diagnostics;
+
 
 
 namespace MobileCRM.Shared.Pages
@@ -24,12 +26,17 @@ namespace MobileCRM.Shared.Pages
 
             NavigateTo(optionsPage.Menu.ItemsSource.Cast<OptionItem>().First());
 
+
+
             ShowLoginDialog();    
         }
 
         async void ShowLoginDialog()
         {
             var page = new LoginPage();
+
+			var wlResponse = await App.WorklightClient.Connect();
+			Debug.Write (wlResponse.Success);
 
             await Navigation.PushModalAsync(page);
         }

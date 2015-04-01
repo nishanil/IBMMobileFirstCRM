@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!--
+    Licensed Materials - Property of IBM
+    5725-I43 (C) Copyright IBM Corp. 2011, 2013. All Rights Reserved.
+    US Government Users Restricted Rights - Use, duplication or
+    disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+-->
+<wl:adapter xmlns:wl="http://www.ibm.com/mfp/integration" xmlns:http="http://www.ibm.com/mfp/integration/http" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="SampleHTTPAdapter">
+    <!--This adapter has been upgraded, For more information about the changes, see the "Adapter timeout and concurrency" topic in the product Knowledge Center.-->
+    <displayName>SampleHTTPAdapter</displayName>
+	<description>SampleHTTPAdapter</description>
+	<connectivity>
+		<connectionPolicy xsi:type="http:HTTPConnectionPolicyType">
+			<protocol>http</protocol>
+			<domain>rss.cnn.com</domain>
+			<port>80</port>
+            <connectionTimeoutInMilliseconds>30000</connectionTimeoutInMilliseconds>
+            <socketTimeoutInMilliseconds>30000</socketTimeoutInMilliseconds>
+            <!--The previous elements: <connectionTimeoutInMilliseconds> and <socketTimeoutInMilliseconds>, were added to <connectionPolicy> element. These elements correspond to TCP connection and socket timeouts when connecting to the back-end. For more details, see HTTP protocol specifications and "Adapter timeout and concurrency" topic in the product Knowledge Center.-->	
+			<!-- Following properties used by adapter's key manager for choosing specific certificate from key store  
+			<sslCertificateAlias></sslCertificateAlias> 
+			<sslCertificatePassword></sslCertificatePassword>
+			-->		
+		<maxConcurrentConnectionsPerNode>2</maxConcurrentConnectionsPerNode>
+            <!--The <maxConcurrentConnectionsPerNode> element has been moved from <loadConstraint> element (and loadConstraint has been commented out). This element sets the maximum number of concurrent requests to the backend. For more information, see the "Adapter timeout and concurrency" topic in the product Knowledge Center.-->
+        </connectionPolicy>
+		<!--<loadConstraints maxConcurrentConnectionsPerNode="2" />-->
+	</connectivity>
+
+	<procedure name="getStories"/>
+
+	<procedure name="getStoriesFiltered"/>
+	
+</wl:adapter>

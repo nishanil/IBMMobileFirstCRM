@@ -39,6 +39,8 @@ namespace MobileCRMAndroid
             Forms.Init(this, bundle);
             FormsMaps.Init(this, bundle);
 
+			App.WorklightClient = Worklight.Xamarin.Android.WorklightClient.CreateInstance (this);
+
 			LoadApplication (new App ());
         }
     }
